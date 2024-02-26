@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -61,6 +61,19 @@
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
+                <version>2.41.1</version> <!-- Use the latest version available -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>apply</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
                 <version>2.41.1</version>
                 <executions>
                     <execution>
@@ -74,17 +87,12 @@
                     <java>
                         <!-- Example: enforce Google Java Code Style -->
                         <googleJavaFormat>
-                            <version>1.8
-                            </version>                      <!-- optional, 1.8 is minimum supported version -->
-                            <style>GOOGLE</style>                       <!-- or AOSP (optional) -->
-                            <reflowLongStrings>true</reflowLongStrings> <!-- optional -->
-                            <formatJavadoc>false</formatJavadoc>        <!-- optional -->
-                            <!-- optional: custom group artifact (you probably don't need this) -->
-                            <groupArtifact>com.google.googlejavaformat:google-java-format</groupArtifact>
+                            <version>1.11.0</version>
                         </googleJavaFormat>
                     </java>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
